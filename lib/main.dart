@@ -120,24 +120,27 @@ class _WelcomeFormState extends State<WelcomeForm> {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              // First Name
-              TextFormField(
-                controller: _firstNameController,
-                style: const TextStyle(color: Colors.white),
-                decoration: _decoration('First Name'),
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'First name is required';
-                  }
-                  return null;
-                },
-              ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 600),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Form(
+              key: _formKey,
+              child: ListView(
+                children: [
+                  // First Name
+                  TextFormField(
+                    controller: _firstNameController,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: _decoration('First Name'),
+                    validator: (value) {
+                      if (value == null || value.trim().isEmpty) {
+                        return 'First name is required';
+                      }
+                      return null;
+                    },
+                  ),
               const SizedBox(height: 16),
 
               // Email
@@ -297,8 +300,9 @@ class _WelcomeFormState extends State<WelcomeForm> {
               const SizedBox(height: 20),
 
               // Tuition
-              const Text('Tuition',
-                  style: TextStyle(
+              // Tuition
+              Text('Tuition: \$${_tuition.round()}', // Displays the dynamic value
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF00E5A0),
                       fontSize: 16)),
@@ -368,6 +372,8 @@ class _WelcomeFormState extends State<WelcomeForm> {
           ),
         ),
       ),
+     ),
+    ),
     );
   }
 }
