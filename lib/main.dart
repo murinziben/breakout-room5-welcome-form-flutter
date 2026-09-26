@@ -118,7 +118,7 @@ class _WelcomeFormState extends State<WelcomeForm> {
         title: const Text(
           'Welcome Back!!!',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        ), centerTitle: true,
       ),
       body: Center(
         child: ConstrainedBox(
@@ -213,11 +213,10 @@ class _WelcomeFormState extends State<WelcomeForm> {
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF00E5A0),
                       fontSize: 16)),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1E1E1E),
-                  borderRadius: BorderRadius.circular(12),
-                ),
+              Material(
+                color: const Color(0xFF1E1E1E),
+                borderRadius: BorderRadius.circular(12),
+                clipBehavior: Clip.antiAlias,
                 child: Row(
                   children: [
                     Expanded(
@@ -257,11 +256,10 @@ class _WelcomeFormState extends State<WelcomeForm> {
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF00E5A0),
                       fontSize: 16)),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1E1E1E),
-                  borderRadius: BorderRadius.circular(12),
-                ),
+              Material(
+                color: const Color(0xFF1E1E1E),
+                borderRadius: BorderRadius.circular(12),
+                clipBehavior: Clip.antiAlias,
                 child: Column(
                   children: [
                     CheckboxListTile(
